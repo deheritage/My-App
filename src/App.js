@@ -1,5 +1,6 @@
 
 import './App.css';
+import Test from './components/Test';
 import Title from './components/Title';
 
 function App() {
@@ -10,11 +11,15 @@ function App() {
     
 
   <Title  headline ={title} newprop={subtitle} />
-  <Title headline ="Title 2" /> 
-  <Title headline = "Title 3" /> 
+  {/* <Title headline ="Title 2" /> 
+  <Title headline = "Title 3" />  */}
 
+
+<Test />
     </>
    
+
+
   );
 }
 

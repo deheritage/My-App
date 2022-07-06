@@ -3,3 +3,9 @@
     background-color: blue;
   }
   
+  button {
+    height: 40px;
+    border: none;
+    color: black;
+    background-color: coral;
+  }
