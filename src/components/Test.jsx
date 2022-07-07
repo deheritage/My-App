@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Title.css";
 const Test = () => {
   const [count, setCount] = useState(0);
@@ -7,6 +7,11 @@ const Test = () => {
 
   const [todoInputValue, setTodoInputValue] = useState("");
   const [todoList, setTodoList] = useState([]);
+
+  const [timer, setTimer] = useState("");
+
+  const [formValue, setFormValue] = useState("");
+
 
   const increment = () => {
     setCount(count + 1);
@@ -21,7 +26,24 @@ const Test = () => {
     setTodoList(tempTodo);
   };
 
+  const myTimer = () => {
+    const date = new Date();
+    setTimer(date.toLocaleTimeString());
+  };
+
+  useEffect(() => {
+    setInterval(myTimer, 1000);
+  }, []);
+
+
   
+    
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    alert(`The name you entered was: ${formValue}`);
+  }
+
+
   return (
     <div>
       <div>
@@ -49,7 +71,7 @@ const Test = () => {
         <button onClick={addTodo}>Add</button>
         <h3>Todos</h3>
         <ul>
-          {todoList.map((value, index) => (
+          {todoList.map((value) => (
             <li>{value}</li>
           ))}
         </ul>
@@ -58,8 +80,20 @@ const Test = () => {
       <div>
         <h1>Hello, world</h1>
         <h2>
-          It is {setInterval(() => new Date().toLocaleTimeString(), 1000)};
+          <h2>It is {timer}.</h2>
         </h2>
+      </div>
+
+      <div>
+        <h1>Form</h1>
+        <form onSubmit={handleSubmit}>
+          <label>
+            Name:
+            <input value={formValue}  onChange={(e) => setFormValue(e.target.value)}/>
+          </label>
+          <input type="Submit" />
+        </form>
+        <h1>{formValue}</h1>
       </div>
     </div>
   );
