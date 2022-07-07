@@ -58,7 +58,7 @@ const Test = () => {
       <div>
         <h1>Hello, world</h1>
         <h2>
-          It is {setInterval(() => new Date().toLocaleTimeString(), 1000)}
+          It is {setInterval(() => new Date().toLocaleTimeString(), 1000)};
         </h2>
       </div>
     </div>
