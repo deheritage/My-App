@@ -100,6 +100,31 @@ const Test = () => {
         </form>
         <h1>{submitformValue}</h1>
       </div>
+
+<div>
+
+</div>
+<div style={{border:'3px solid red;'}}>
+
+<h2>Order Information...</h2>
+
+<p>
+  <label>Product Name : 
+    <select>
+      <option value="Product-1">Product-1</option>
+      <option value="Product-2">Product-2</option>
+      <option value="Product-3">Product-3</option>
+    </select>
+  </label>
+</p>
+
+<p>
+<label>Enter Quantity : <input type="text">
+  </input>
+</label>
+</p>
+
+</div>
     </div>
   );
 };
