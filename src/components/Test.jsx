@@ -12,6 +12,9 @@ const Test = () => {
 
   const [formValue, setFormValue] = useState("");
 
+  const [submitformValue, setSubmitFormValue] = useState("");
+
+
 
   const increment = () => {
     setCount(count + 1);
@@ -36,12 +39,14 @@ const Test = () => {
   }, []);
 
 
-  
-    
+
+
   const handleSubmit = (event) => {
     event.preventDefault();
-    alert(`The name you entered was: ${formValue}`);
+    setSubmitFormValue(formValue);
   }
+  // alert(`The name you entered was: ${formValue}`);
+
 
 
   return (
@@ -89,11 +94,11 @@ const Test = () => {
         <form onSubmit={handleSubmit}>
           <label>
             Name:
-            <input value={formValue}  onChange={(e) => setFormValue(e.target.value)}/>
+            <input value={formValue} onChange={(e) => setFormValue(e.target.value)} />
           </label>
           <input type="Submit" />
         </form>
-        <h1>{formValue}</h1>
+        <h1>{submitformValue}</h1>
       </div>
     </div>
   );
